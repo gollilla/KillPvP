@@ -44,7 +44,7 @@ class Main extends PluginBase implements Listener{
     private $coinAPI = null;
     private $loadCoinApi = false;
 
-	public function onEnable(){
+    public function onEnable(){
 		$this->data = new SaveData($this->getDataFolder());
 		$this->team = new TeamHolder($this->data);
 		$this->msgTask = new MsgTask($this);
@@ -57,7 +57,7 @@ class Main extends PluginBase implements Listener{
         	$this->coinAPI = $this->getServer()->getPluginManager()->getPlugin("CoinSystem");
         	$this->loadCoinApi = true;
         }
-	}
+    }
 
 	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
         switch($cmd->getName()){
