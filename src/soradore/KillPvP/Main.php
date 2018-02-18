@@ -46,9 +46,9 @@ class Main extends PluginBase implements Listener{
 
     public function onEnable(){
     	$this->data = new SaveData($this->getDataFolder());
-		$this->team = new TeamHolder($this->data);
-		$this->msgTask = new MsgTask($this);
-		$this->getServer()->getScheduler()->scheduleRepeatingTask($this->msgTask, 20);
+    	$this->team = new TeamHolder($this->data);
+    	$this->msgTask = new MsgTask($this);
+    	$this->getServer()->getScheduler()->scheduleRepeatingTask($this->msgTask, 20);
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
 
         //game setting
@@ -170,7 +170,7 @@ class Main extends PluginBase implements Listener{
 	}
 
 
-	public function isJoinBlock($block){
+    public function isJoinBlock($block){
     	$data = $this->data->getBlockForJoin();
     	$data = $data->level->getBlock($data);
         return ($data == $block);
