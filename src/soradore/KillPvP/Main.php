@@ -45,13 +45,13 @@ class Main extends PluginBase implements Listener{
     private $loadCoinApi = false;
 
     public function onEnable(){
-		$this->data = new SaveData($this->getDataFolder());
+    	$this->data = new SaveData($this->getDataFolder());
 		$this->team = new TeamHolder($this->data);
 		$this->msgTask = new MsgTask($this);
 		$this->getServer()->getScheduler()->scheduleRepeatingTask($this->msgTask, 20);
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
 
-        //GameSetting
+        //game setting
         $this->count["RED"] = $this->count["BLUE"] = 0;
         if($this->getServer()->getPluginManager()->getPlugin("CoinSystem") !== NULL){
         	$this->coinAPI = $this->getServer()->getPluginManager()->getPlugin("CoinSystem");
