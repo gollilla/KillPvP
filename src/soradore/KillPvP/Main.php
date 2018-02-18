@@ -59,8 +59,9 @@ class Main extends PluginBase implements Listener{
         }
     }
 
-	public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
-        switch($cmd->getName()){
+
+    public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
+    	switch($cmd->getName()){
         	case 'setblock':
         		if($sender instanceof Player){
         			$name = $sender->getName();
@@ -101,10 +102,10 @@ class Main extends PluginBase implements Listener{
                 }
         }
         return true;
-	}
+    }
 
 
-	public function addPlayer(Player $player){
+    public function addPlayer(Player $player){
 		$team = $this->team;
 		$red = $team->getRedPlayersCount();
 		$blue = $team->getBluePlayersCount();
@@ -121,6 +122,7 @@ class Main extends PluginBase implements Listener{
 			$team->addBlue($player);
 		}
 	}
+
 
 	public function onTouch(PlayerInteractEvent $ev){
 		$player = $ev->getPlayer();
@@ -147,6 +149,7 @@ class Main extends PluginBase implements Listener{
 		}
 	}
 
+
 	public function onDamage(EntityDamageEvent $ev){
 		$entity = $ev->getEntity();
 		if($ev instanceof EntityDamageByEntityEvent){
@@ -166,19 +169,23 @@ class Main extends PluginBase implements Listener{
 		}
 	}
 
+
 	public function isJoinBlock($block){
     	$data = $this->data->getBlockForJoin();
     	$data = $data->level->getBlock($data);
         return ($data == $block);
     }
 
+
     public function isPlayer($player){
         return $this->team->isPlayer($player);
     }
 
+
     public function getTeam($player){
     	return $this->team->getTeam($player);
     }
+
 
     public function onDeath(PlayerDeathEvent $ev){
     	$entity = $ev->getPlayer();
@@ -201,13 +208,16 @@ class Main extends PluginBase implements Listener{
     	}
     }
 
+
     public function addKillCount($team){
     	$this->count[$team] += 1;
     }
 
+
     public function getKillCount($team){
     	return $this->count[$team];
     }
+
 
     public function check($team){
     	$maxKill = $this->data->getMaxKill();
@@ -215,6 +225,7 @@ class Main extends PluginBase implements Listener{
     		$this->endGame($team);
     	}
     }
+
 
     public function endGame($won){
     	$this->getServer()->broadcastMessage("§6終了!!");
@@ -235,6 +246,7 @@ class Main extends PluginBase implements Listener{
     	$this->getServer()->getScheduler()->scheduleDelayedTask(new CallbackTask([$this, "shutdown"]), 20 * 10);
     }
 
+
     public function onQuit(PlayerQuitEvent $ev){
     	$player = $ev->getPlayer();
     	if($this->isPlayer($player)){
@@ -243,6 +255,7 @@ class Main extends PluginBase implements Listener{
     	}
     }
 
+
     public function broadcastTips($msg = ""){
         $players = $this->team->getAllPlayers();
         foreach ($players as $player) {
@@ -250,8 +263,10 @@ class Main extends PluginBase implements Listener{
         }
     }
 
+
     public function shutdown(){
     	$this->getServer()->shutdown();
     }
+
 
 }
