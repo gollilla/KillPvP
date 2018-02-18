@@ -15,6 +15,7 @@ use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 
+/*  Events */
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -25,7 +26,7 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDeathEvent;
 use pocketmine\Entity;
 
-
+/*  command  */
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 
