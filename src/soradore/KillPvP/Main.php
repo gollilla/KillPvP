@@ -33,7 +33,7 @@ class Main extends PluginBase implements Listener{
 	/**
 	 * @value SaveData $data
 	 */
-
+    
     public $data = null;
     public $team = null;
     public $msgTask = null;
