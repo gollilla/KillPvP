@@ -1,0 +1,27 @@
+name: KillPvP
+main: soradore\KillPvP\Main
+version: 2.5
+api: [3.0.0-ALPHA9,3.0.0-ALPHA10]
+
+load: POSTWORLD
+author: soradore
+description: KillPvP
+
+commands:
+  setblock:
+    description: 参加用ブロック設定コマンド
+    permission: test 
+  setpos:
+    description: チーム用スポーン地点設定コマンド 地点に立って /setpos [red/blue]
+    permission: test
+  armor:
+    description: 防具配布切り替えコマンド /armor [on/off]
+    permission: test
+
+permissions:
+  setpos:
+    default: op
+  setblock:
+    default: op
+  armor: 
+    default: op

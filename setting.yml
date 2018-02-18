@@ -1,0 +1,20 @@
+---
+Max_Kill: 30
+Block_For_Join:
+  x: 241
+  "y": 74
+  z: 227
+  world: world
+RED_SPAWN:
+  x: 230.700000
+  "y": 69.000000
+  z: 231.565300
+  world: world
+BLUE_SPAWN:
+  x: 230.578700
+  "y": 69.000000
+  z: 226.500700
+  world: world
+SET_ARMOR: "on"
+KILL_MONEY: 0
+...
