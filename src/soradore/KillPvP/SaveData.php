@@ -18,8 +18,7 @@ define("FILE_NAME", "setting.yml");
 class SaveData {
 
 
-	public function __construct($dataFolder)
-	{
+	public function __construct($dataFolder){
 		if(!file_exists($dataFolder)){
 			mkdir($dataFolder, 0744, true);
 		}

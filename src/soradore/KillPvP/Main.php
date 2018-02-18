@@ -43,8 +43,7 @@ class Main extends PluginBase implements Listener{
     private $coinAPI = null;
     private $loadCoinApi = false;
 
-	public function onEnable()
-	{
+	public function onEnable(){
 		$this->data = new SaveData($this->getDataFolder());
 		$this->team = new TeamHolder($this->data);
 		$this->msgTask = new MsgTask($this);
@@ -104,8 +103,7 @@ class Main extends PluginBase implements Listener{
 	}
 
 
-	public function addPlayer(Player $player)
-	{
+	public function addPlayer(Player $player){
 		$team = $this->team;
 		$red = $team->getRedPlayersCount();
 		$blue = $team->getBluePlayersCount();
@@ -123,8 +121,7 @@ class Main extends PluginBase implements Listener{
 		}
 	}
 
-	public function onTouch(PlayerInteractEvent $ev)
-	{
+	public function onTouch(PlayerInteractEvent $ev){
 		$player = $ev->getPlayer();
 		$name = $player->getName();
 		$block = $ev->getBlock();

@@ -15,16 +15,14 @@ use pocketmine\scheduler\PluginTask;
 class MsgTask extends PluginTask {
 
 	
-	public function __construct($main)
-	{
+	public function __construct($main){
 		parent::__construct($main);
 		$this->main = $this->getOwner();
 	}
 	/**
 	 * @param $currentTick
 	 */
-	public function onRun($currentTick)
-	{
+	public function onRun($currentTick){
 		$main = $this->main;
 		$space = str_repeat("  ", 20);
 		$maxKill = $main->data->getMaxKill();
